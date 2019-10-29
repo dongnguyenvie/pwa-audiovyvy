@@ -1,15 +1,26 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { StoreOptions, Commit } from 'vuex'
+import * as types from 'store/types'
+import services from 'services/index'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store: StoreOptions<types.RootState> = {
   state: {
+    allSettings: {}
   },
   mutations: {
+    [types.Multation.SetAllSettings] (state: types.RootState, payload): void {
+      console.error(payload)
+      state.allSettings = payload
+    }
   },
   actions: {
+    async [types.Action.FetchAllSettings] ({ commit }: {commit: Commit}, state: types.RootState): Promise<void> {
+      const data = await services.getAllSettings()
+      commit(types.Multation.SetAllSettings, data)
+    }
   },
-  modules: {
-  }
-})
+  modules: {}
+}
+export default new Vuex.Store(store)

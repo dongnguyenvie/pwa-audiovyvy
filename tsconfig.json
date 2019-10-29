@@ -18,6 +18,30 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "utils/*": [
+        "src/utils/*"
+      ],
+      "services/*": [
+        "src/services/*"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "plugins/*": [
+        "src/plugins/*"
+      ],
+      "router/*": [
+        "src/router/*"
+      ],
+      "services/*": [
+        "src/services/*"
+      ],
+      "store/*": [
+        "src/store/*"
+      ],
+      "views/*": [
+        "src/views/*"
       ]
     },
     "lib": [
