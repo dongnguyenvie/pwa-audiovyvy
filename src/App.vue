@@ -6,6 +6,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import servies from '@/services'
 
+// console.log(servies.getAllSettings().then(res => console.res))
 @Component({
   components: {
   },

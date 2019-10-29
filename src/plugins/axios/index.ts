@@ -44,8 +44,6 @@ export const useQuery: types.IUseQuery<any> = (query, variables) => {
         if (data.errors && data.errors.length) {
           const message = data.errors.map((error) => error.message).join(' ')
         }
-        debugger
-
         resolve({ data: _.isEmpty(data.errors) ? data.data : {}, error: data.errors })
       })
       .catch((errors) => {
