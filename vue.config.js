@@ -1,21 +1,18 @@
 const path = require('path')
 module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@': path.join(__dirname, 'src/'),
-        'plugins': path.join(__dirname, 'src/plugins'),
-        'router': path.join(__dirname, 'src/router'),
-        'views': path.join(__dirname, 'src/views'),
-        'components': path.join(__dirname, 'src/components'),
-        'services': path.join(__dirname, 'src/services'),
-        'store': path.join(__dirname, 'src/store')
-      }
-    }
-  },
-  chainWebpack: config => {
-    config.module.rule('eslint').use('eslint-loader').options({
-      fix: true // autofix esline
-    })
+  chainWebpack: (config) => {
+    config.resolve.alias
+      .set('plugins', path.resolve(__dirname, 'src/plugins'))
+      .set('router', path.resolve(__dirname, 'src/router'))
+      .set('views', path.resolve(__dirname, 'src/views'))
+      .set('components', path.resolve(__dirname, 'src/components'))
+      .set('services', path.resolve(__dirname, 'src/services'))
+      .set('store', path.resolve(__dirname, 'src/store'))
+    config.module
+      .rule('eslint')
+      .use('eslint-loader')
+      .options({
+        fix: true // autofix esline
+      })
   }
 }

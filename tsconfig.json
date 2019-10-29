@@ -19,9 +19,6 @@
       "@/*": [
         "src/*"
       ],
-      "utils/*": [
-        "src/utils/*"
-      ],
       "services/*": [
         "src/services/*"
       ],
@@ -33,9 +30,6 @@
       ],
       "router/*": [
         "src/router/*"
-      ],
-      "services/*": [
-        "src/services/*"
       ],
       "store/*": [
         "src/store/*"
