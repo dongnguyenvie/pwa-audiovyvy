@@ -25,7 +25,9 @@ import { Component, Vue } from 'vue-property-decorator'
       console.log('click')
     }
   },
-  created () {}
+  created () {
+    // this.selection = true
+  }
 })
 export default class App extends Vue {}
 </script>

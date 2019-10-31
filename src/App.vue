@@ -4,14 +4,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import servies from '@/services'
 
-// console.log(servies.getAllSettings().then(res => console.res))
 @Component({
   components: {
   },
   created () {
-    window.dongdong = this
+    // window.dongdong = this
+    // console.log(this.dongaaa)
   }
 })
 export default class App extends Vue {}

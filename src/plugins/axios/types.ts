@@ -1,5 +1,5 @@
 interface IError {
-    message: String
+    message: string
 }
 
 export interface IData {
@@ -8,5 +8,5 @@ export interface IData {
 }
 
 export interface IUseQuery<T> {
-  (query: String, variables?: Object): Promise<T>
+  (query: string, variables?: object): Promise<T>
 }

@@ -29,14 +29,18 @@
 
 <script lang="ts">
 import { Prop, Vue, Component } from 'vue-property-decorator'
+import InitializeVue from '@/Initialize'
 import Card from 'components/shared/Card.vue'
 
 @Component({
   components: {
     Card
+  },
+  created () {
+    console.log((this as InitializeVue)._settings('allSettings'))
   }
 })
-export default class Home extends Vue {
+export default class Home extends InitializeVue {
 
 }
 </script>
