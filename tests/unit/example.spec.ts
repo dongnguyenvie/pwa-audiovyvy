@@ -1,12 +1,15 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import App from '@/App.vue'
+import VueRouter from 'vue-router'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+const localVue = createLocalVue()
+localVue.use(VueRouter)
+
+describe('App.vue', () => {
+  it('import success vue router', () => {
+    const wrapper = shallowMount(App, {
+      localVue
     })
-    expect(wrapper.text()).toMatch(msg)
+    expect('true').toMatch('true')
   })
 })
