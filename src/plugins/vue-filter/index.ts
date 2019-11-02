@@ -3,9 +3,8 @@ import * as types from './types'
 import _ from 'lodash'
 
 const initializeFilter: types.IFilter = ({ settings }) => {
+  console.warn(`initializeFilter`, settings)
   Vue.filter('settings', (key: string) => {
-    debugger
-    console.error(`settings`, settings)
     return _.get(settings, key)
   })
 }

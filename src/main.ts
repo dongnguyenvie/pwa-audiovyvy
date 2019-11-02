@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 
 Vue.use(vuePlugin)
 
-new InitializeVue({
+const initializeVue = new InitializeVue({
   router,
   store,
   vuetify,
@@ -29,9 +29,12 @@ new InitializeVue({
       fetchAllSettings: storeTypes.Action.FetchAllSettings
     })
   },
+  async beforeCreate () {
+  },
   async created () {
     await (this as any).fetchAllSettings()
-    console.log(`(this as any).settings`, (this as any).settings)
     VueFilter({ settings: (this as any).settings })
+    // after global all settings to render
+    initializeVue.$mount('#app')
   }
-}).$mount('#app')
+})

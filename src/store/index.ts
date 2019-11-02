@@ -20,9 +20,8 @@ const store: StoreOptions<types.RootState> = {
     }
   },
   mutations: {
-    [types.Multation.SetAllSettings] (state: types.RootState, payload: types.RootState): void {
-      console.error(payload)
-      state.allSettings = payload
+    [types.Multation.SetAllSettings] (state: types.RootState, payload: any): void {
+      state.allSettings = payload.error ? {} : payload.data.allSettings
     },
     [types.Multation.SetCategories] (state: types.RootState, payload: types.RootState): void {
       const categories = [
