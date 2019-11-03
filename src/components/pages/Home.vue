@@ -20,10 +20,18 @@ import InitializeVue from '@/Initialize'
 import Carousel from 'components/shared/Carousel.vue'
 import Section from 'components/shared/Section.vue'
 
-interface IHome {
-  posts: object
-  loadData(): void
+interface IPost {
+  title: string
+  nodes: Array<{
+    featuredImage: object
+    id: string
+    postId: number
+    title: string
+    uri: string
+  }>
+  isCarousel: boolean
 }
+
 const CAROUSEL = ['soHot']
 const MAPPER_TITLE = {
   soHot: 'Truyện Hot',
@@ -43,7 +51,7 @@ export default class Home extends Vue {
   posts: object = {}
 
   public get getPosts () {
-    const posts: any = []
+    const posts: Array<IPost> = []
     Object.keys(MAPPER_TITLE).forEach((categoryNm) => {
       posts.push({
         title: (MAPPER_TITLE as any)[categoryNm],
