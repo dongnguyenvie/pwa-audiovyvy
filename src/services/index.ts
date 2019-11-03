@@ -6,7 +6,7 @@ export default {
     return useQuery(queries.query.getAllSettings)
   },
   getHomePosts: (variables?: object) => {
-    return useQuery(queries.query.getCategories, variables)
+    return useQuery(queries.query.getHomePosts, variables)
   },
   getCategories: (variables?: object) => {
     return useQuery(queries.query.getCategories, variables)

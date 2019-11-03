@@ -1,7 +1,7 @@
 /* eslint-disable */
 export const getHomePosts = `
 query GET_POSTS($first: Int) {
-  hot: posts(first: $first, where: {categoryNotIn: [1, 13], tag: "top-truyen", exRandom: true, status: PUBLISH}) {
+  soHot: posts(first: $first, where: {categoryNotIn: [1, 13], tag: "top-truyen", exRandom: true, status: PUBLISH}) {
     nodes {
       id
       postId
@@ -23,7 +23,7 @@ query GET_POSTS($first: Int) {
       }
     }
   }
-  _tienhiep: posts(first: $first, where: {categoryNotIn: [1, 13], categoryId: 11, exRandom: true, status: PUBLISH}) {
+  tienHiep: posts(first: $first, where: {categoryNotIn: [1, 13], categoryId: 11, exRandom: true, status: PUBLISH}) {
     nodes {
       postId
       title
@@ -34,7 +34,7 @@ query GET_POSTS($first: Int) {
       }
     }
   }
-  _ma: posts(first: $first, where: {categoryNotIn: [1, 13], categoryId: 28, exRandom: true, status: PUBLISH}) {
+  kinhDi: posts(first: $first, where: {categoryNotIn: [1, 13], categoryId: 28, exRandom: true, status: PUBLISH}) {
     nodes {
       id
       postId
@@ -45,7 +45,7 @@ query GET_POSTS($first: Int) {
       }
     }
   }
-  _quan_truong: posts(first: $first, where: {categoryNotIn: [1, 13], categoryId: 6, exRandom: true, status: PUBLISH}) {
+  quanTruong: posts(first: $first, where: {categoryNotIn: [1, 13], categoryId: 6, exRandom: true, status: PUBLISH}) {
     nodes {
       id
       postId

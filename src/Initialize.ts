@@ -6,6 +6,9 @@ interface IInitializeVue {
 }
 
 export default class InitializeVue extends Vue implements IInitializeVue {
+  public created (): void {
+    this.onCreated()
+  }
   public onMounted (): void {
     console.warn('[InitializeVue] onMounted')
   }

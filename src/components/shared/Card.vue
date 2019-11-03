@@ -1,6 +1,6 @@
 <template>
-  <v-card :loading="loading" class="mx-auto my-4">
-    <v-img src="https://audiovyvy.com/wp-content/uploads/2019/09/audiovyvy-linh-vu-thien-ha-1.jpg"></v-img>
+  <v-card :loading="loading" class="mx-auto my-4" :outlined="false" :shaped="false" :tile="true" :light="true">
+    <v-img max-height="150"   src="https://audiovyvy.com/wp-content/uploads/2019/09/audiovyvy-linh-vu-thien-ha-1.jpg"></v-img>
     <v-card-title class="pl-3 pb-1 subtitle-1 black--text d-flex flex-row justify-space-between">
       Cafe Badilico
       <v-rating :value="4.5" color="amber" dense half-increments readonly size="14"></v-rating>
