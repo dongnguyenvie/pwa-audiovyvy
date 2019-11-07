@@ -4,7 +4,7 @@ import Vuetify from 'vuetify'
 import { VuetifyPreset } from 'vuetify/types/presets'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
-
+import colors from 'vuetify/lib/util/colors'
 Vue.use(Vuetify)
 
 const opts: Partial<VuetifyPreset> = {

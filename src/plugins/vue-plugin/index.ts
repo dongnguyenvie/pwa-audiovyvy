@@ -1,5 +1,6 @@
 import { PluginObject } from 'vue'
-// import * as types from './types'
+import { Store } from 'vuex'
+import * as types from 'store/types'
 // import { Action, Getter, Mutation, State, namespace } from 'vuex-class'
 // import { mapActions, mapGetters } from 'vuex'
 // import * as storeTypes from 'store/types'
@@ -10,7 +11,7 @@ const vuePlugin: PluginObject<any> = {
     Vue.mixin({
       computed: {
         _settings (): object {
-          return (this as any).$store.getters.ALL_SETTINGS
+          return (this.$store as Store<types.RootState>).getters.ALL_SETTINGS
         }
       }
     })

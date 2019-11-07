@@ -18,7 +18,7 @@ const initializeVue = new InitializeVue({
   router,
   store,
   vuetify,
-  render: h => h(App),
+  render: (h) => h(App),
   computed: {
     ...mapGetters({
       settings: storeTypes.Getter.AllSettings
@@ -29,11 +29,10 @@ const initializeVue = new InitializeVue({
       fetchAllSettings: storeTypes.Action.FetchAllSettings
     })
   },
-  async beforeCreate () {
-  },
+  async beforeCreate () {},
   async created () {
-    await (this as any).fetchAllSettings()
-    VueFilter({ settings: (this as any).settings })
+    await (this as typeof initializeVue).fetchAllSettings()
+    VueFilter({ settings: (this as typeof initializeVue).settings })
     // after global all settings to render
     initializeVue.$mount('#app')
   }

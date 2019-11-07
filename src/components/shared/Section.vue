@@ -1,7 +1,7 @@
 <template>
-  <v-row>
-    <v-col v-for="n in 25" :key="n" cols="6" sm="4" md="3">
-      <Card />
+  <v-row class="align-self-xl-auto">
+    <v-col v-for="(item, index) in items" :key="index" cols="6" sm="4" md="3">
+      <Card :item="item" />
     </v-col>
   </v-row>
 </template>

@@ -2,8 +2,8 @@
   <v-carousel :hide-delimiters="true" :height="300">
     <v-carousel-item :key="i" v-for="i in loopQuantity">
       <v-row justify="center">
-        <v-col v-for="n in 25" :key="n" cols="3">
-          <Card :items="items" />
+        <v-col v-for="(item, index) in items" :key="index" cols="3">
+          <Card :item="item" />
         </v-col>
       </v-row>
     </v-carousel-item>

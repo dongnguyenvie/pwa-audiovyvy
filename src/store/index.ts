@@ -20,7 +20,7 @@ const store: StoreOptions<types.RootState> = {
     }
   },
   mutations: {
-    [types.Multation.SetAllSettings] (state: types.RootState, payload: { errors?: any, data: { allSettings: types.RootState}}): void {
+    [types.Multation.SetAllSettings] (state: types.RootState, payload: { errors?: any; data: { allSettings: types.RootState } }): void {
       state.allSettings = payload.errors ? {} : payload.data.allSettings
     },
     [types.Multation.SetCategories] (state: types.RootState, payload: types.RootState): void {
@@ -35,12 +35,12 @@ const store: StoreOptions<types.RootState> = {
     }
   },
   actions: {
-    async [types.Action.FetchAllSettings] ({ commit }: {commit: Commit}, payload: any): Promise<void> {
+    async [types.Action.FetchAllSettings] ({ commit }: { commit: Commit }, payload: any): Promise<any> {
       const data = await services.getAllSettings()
       commit(types.Multation.SetAllSettings, data)
       return data
     },
-    async [types.Action.FetchCategories] ({ commit }: {commit: Commit}, payload: any): Promise<void> {
+    async [types.Action.FetchCategories] ({ commit }: { commit: Commit }, payload: any): Promise<void> {
       commit(types.Multation.SetCategories)
     }
   },

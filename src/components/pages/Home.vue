@@ -33,11 +33,11 @@ interface IPost {
 }
 
 const CAROUSEL = ['soHot']
-const MAPPER_TITLE = {
+const MAPPER_TITLE: { [key: string]: string } = {
   soHot: 'Truyện Hot',
   new: 'Truyện mới',
   tienHiep: 'Truyện tiên hiệp',
-  KinhDi: 'Truyện kinh dị',
+  kinhDi: 'Truyện kinh dị',
   quanTruong: 'Truyện quan trường'
 }
 
@@ -51,10 +51,10 @@ export default class Home extends Vue {
   posts: object = {}
 
   public get getPosts () {
-    const posts: Array<IPost> = []
+    let posts = [] as Array<IPost>
     Object.keys(MAPPER_TITLE).forEach((categoryNm) => {
       posts.push({
-        title: (MAPPER_TITLE as any)[categoryNm],
+        title: MAPPER_TITLE[categoryNm],
         ...(this.posts as any)[categoryNm],
         isCarousel: CAROUSEL.indexOf(categoryNm) !== -1
       })

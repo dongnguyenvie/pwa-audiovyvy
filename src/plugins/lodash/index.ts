@@ -1,3 +1,7 @@
-import lodash from 'lodash'
+import { upperFirst, camelCase, forEach } from 'lodash'
 
-export default lodash
+export default {
+  upperFirst,
+  camelCase,
+  forEach
+}
